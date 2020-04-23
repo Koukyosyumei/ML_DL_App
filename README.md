@@ -20,3 +20,17 @@ http://quotes.toscrape.com から名言をスクレイピングしてデータ�
 (python app.py で実行できる)
 
 ![](Generate_Quotes/generate_quotes_re.png)
+
+
+## Mercari
+
+メルカリに出品されている商品の画像をVGG16で学習させ、その落札価格を予測する
+
+試しに「オルチャン tops」で検索してスクレイピングした100枚で学習させたところ,   
+以下のような結果になった
+
+![](Mercari/output/loss_re.png)
+![](Mercari/output/absolute_error_re.png)
+
+このジャンルの価格の分散は2500円程度なので、あてずっぽうに価格を決めるよりは、適切な    
+価格の提示てきている?

@@ -8,13 +8,6 @@ def main():
     fpath = "gdrive/My Drive/IMG-PRICE/IMG-PRICE/"
     fname = "orutyan.csv"
 
-    # ------- 価格の読み込み、前処理 ---------------------
-    df = pd.read_csv(fpath+fname)
-    price = df["price"].apply(lambda x: float(str(x).replace(",", "")))
-    price = price.fillna(0)
-
-    print("mean_price: ", price.mean())
-
     # -------- ハイパーパラメータ --------------------------
     # 外部ファイルから読み込めるようにすること
 
@@ -30,6 +23,13 @@ def main():
     LR = 0.01
     # 使う枚数
     num_image = 100
+
+    # ------- 価格の読み込み、前処理 ---------------------
+    df = pd.read_csv(fpath+fname)
+    price = df["price"].apply(lambda x: float(str(x).replace(",", "")))
+    price = price.fillna(0)
+
+    print("mean_price: ", price.mean())
 
     # -------- 画像読み込み ---------------
     image_list = load_image(x, y, num_image, fpath)
